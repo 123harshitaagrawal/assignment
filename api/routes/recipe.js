@@ -1,12 +1,13 @@
 import express from 'express'
 import { add,getAllRecipe,getRecipeById,getRecipeByUserId,savedRecipeById,getSavedRecipe} from '../controllers/recipe.js';
+import { Authenticate } from '../middleware/auth.js';
 
 
 
 const router = express.Router();
 
 // create recipe
-router.post('/add', add)
+router.post('/add', Authenticate,add)
 
 // get all recipe
 router.get('/',getAllRecipe)
@@ -21,7 +22,7 @@ router.get('/:id',getRecipeById)
 router.get('/user/:id',getRecipeByUserId)
 
 // // saved Recipe by Id
-router.post("/:id", savedRecipeById);
+router.post("/:id",Authenticate, savedRecipeById);
 
 
 
