@@ -1,7 +1,16 @@
 import express from "express";
 import mongoose from "mongoose";
+import bodyParser from 'express'
+import userRouter from './routes/user.js'
 
 const app = express(); 
+
+
+app.use(bodyParser.json())
+
+// userRouter
+app.use('/api',userRouter)
+
 mongoose
   .connect(
     "mongodb+srv://harshitaagrawal026:z3PrkDOVeD6L8WHs@cluster0.omfkcni.mongodb.net/",
