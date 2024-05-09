@@ -13,7 +13,7 @@ const Navbar = () => {
           className="left"
           style={{ textDecoration: "none", color: "white" }}
         >
-          <h2>MERN Recipe</h2>
+          <h2>Taste Tales</h2>
         </Link>
         <div className="right">
           {isAuthenticated && (
