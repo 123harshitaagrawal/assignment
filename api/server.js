@@ -2,6 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 import bodyParser from 'express'
 import userRouter from './routes/user.js'
+import recipeRouter from './routes/recipe.js'
 
 const app = express(); 
 
@@ -10,6 +11,9 @@ app.use(bodyParser.json())
 
 // userRouter
 app.use('/api',userRouter)
+
+// recipeRouter
+app.use('/api',recipeRouter)
 
 mongoose
   .connect(
